@@ -1,95 +1,90 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client"
+import { useState } from "react"
+import { points } from './points.ts'
+
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+  const [tenbou, setTenbou] = useState(0)
+  const [honba, setHonba] = useState(0)
+
+
+  const ipp = () => {
+    return (
+      <>
+      <div className="row">
+        <div className="col-auto">  
+          <label className="p-3">自分が </label>
+          <select className="form-control">
+            <option>親</option>
+            <option>子</option>
+          </select>
+        </div>
+        
+        <div className="col-auto">  
+          <label className="p-3">点棒</label>
+          <input className="form-control" type="number" min="0" max="99" value={tenbou} onChange={e=>setTenbou(Number(e.target.value))} />
+        </div>
+
+        <div className="col-auto">  
+          <label className="p-3">本場 </label>
+          <input className="form-control" type="number" min="0" max="99" value={honba} onChange={e=>setHonba(Number(e.target.value))} />
+        </div>
+
+      </div>
+      
+      <div className="row">
+        <div className="col-auto">
+          <input type="checkbox" className="p-3"/>
+          <label className="m-3">ロン</label>
+        </div>
+        <div className="col-auto">
+          <input type="checkbox" className="p-3"/>
+          <label className="m-3">ツモ</label>
         </div>
       </div>
+      </>
+    );
+  };
+  
+  const hheader = [
+    "点差(子)", "点差(親)", "和了点数", "確率"
+  ]
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+  // 表
+  const hyou = () => {
+    // 取得する情報が変化する
+    
+    return (
+      <table className="table table-sm mt-3 table-bordered">
+        <thead className="thead-light">
+        <tr>
+        {hheader.map((h, i)=><th key={i}>{h}</th>)}
+        </tr>
+        </thead>
+        <tbody>
+        {points.map((h, i) => {
+          const tensa_child = h.child * 2 + h.parent + h.child + tenbou * 1000 + honba * 400
+          const tensa_parent = h.child * 2 + h.parent + h.parent + tenbou * 1000 + honba * 400
+          return (
+            <tr key={i}>
+              <td className="text-danger">{tensa_child}</td>
+              <td>{tensa_parent}  </td>
+              <td>{h.aka}({h.child}-{h.parent})</td>
+              <td>{h.rate * 100} %</td>
+            </tr>
+          );
+        })}
+        </tbody>
+      </table>
+    );
+  };
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+  return (
+    <div className="container">
+      {ipp()}
+      <h4>mmp</h4>
+      {hyou()}
+    </div>
+  );
+};
