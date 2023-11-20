@@ -31,46 +31,31 @@ export const Hyou : React.FC<Props> = ({tenbou, honba, oya, rival, tsumo, ron}: 
         }
     }
 
-    let hdata: HData[]
-
-    // 親の場合
-    if (oya === '親') {
-        hdata = points.map(p => {
-            let tensa = p.parent_tsumo * 4 + tenbou * 1000 + honba * 400
-            
-            return {
-                method: 'ツモ',
-                tensa: tensa,
-                aka: `${p.aka}(${p.parent_tsumo}オール)`,
-                rate: p.rate * 100,
-                ex1: p.ex1,
-                ex2: p.ex2,
-                ex3: p.ex3,
-            }
-        })
-    }
-    // 子の場合
-    else{
-        hdata = points.map(p => {
-            let tensa = 0
+    let hdata: HData[] = []
+    hdata.push(...points.map(p => {
+        let tensa = 0
+        if (oya === '親') {
+        tensa = p.parent_tsumo * 4 + tenbou * 1000 + honba * 400
+        }
+        else{
             if (rival==='子'){
                 tensa = p.child_tsumo_from_child * 3 + p.child_tsumo_from_parent + tenbou * 1000 + honba * 400
             }
             else{
                 tensa = p.child_tsumo_from_child * 2 + p.child_tsumo_from_parent * 2 + tenbou * 1000 + honba * 400
             }
-                  
-            return {
-                method: 'ツモ',
-                tensa: tensa,
-                aka: `${p.aka}(${p.child_tsumo_from_child}-${p.child_tsumo_from_parent})`,
-                rate: p.rate * 100,
-                ex1: p.ex1,
-                ex2: p.ex2,
-                ex3: p.ex3,
-            }
-        })
-    }
+        }
+        
+        return {
+            method: 'ツモ',
+            tensa: tensa,
+            aka: oya === '親' ? `${p.aka}(${p.parent_tsumo}オール)` : `${p.aka}(${p.child_tsumo_from_child}-${p.child_tsumo_from_parent})`,
+            rate: p.rate * 100,
+            ex1: p.ex1,
+            ex2: p.ex2,
+            ex3: p.ex3,
+        }
+    }))
 
     // 絞り込みによって取得する情報を変化させる
     
