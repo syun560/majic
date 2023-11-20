@@ -14,7 +14,7 @@ export const points = [
     {
         child_tsumo_from_child: 400,
         child_tsumo_from_parent: 700,
-        child_ron: 1000,
+        child_ron: 1500,
         parent_tsumo: 700,
         parent_ron: 2100,
         aka: "20符1翻",
@@ -26,7 +26,7 @@ export const points = [
     {
         child_tsumo_from_child: 400,
         child_tsumo_from_parent: 800,
-        child_ron: 1000,
+        child_ron: 1600,
         parent_tsumo: 800,
         parent_ron: 2400,
         aka: "テンパネ？",
@@ -38,7 +38,7 @@ export const points = [
     {
         child_tsumo_from_child: 700,
         child_tsumo_from_parent: 1300,
-        child_ron: 1600,
+        child_ron: 2700,
         parent_tsumo: 1300,
         parent_ron: 3900,
         aka: "25符",
@@ -72,11 +72,23 @@ export const points = [
         rate: 0.4
     },
     {
+        child_tsumo_from_child: 1600,
+        child_tsumo_from_parent: 3200,
+        child_ron: 6400,
+        parent_tsumo: 3200,
+        parent_ron: 9600,
+        aka: "",
+        ex1: "",
+        ex2: "七対子",
+        ex3: "",
+        rate: 0.4
+    },
+    {
         child_tsumo_from_child: 2000,
         child_tsumo_from_parent: 3900,
-        child_ron: 5200,
-        parent_tsumo: 3000,
-        parent_ron: 2000,
+        child_ron: 7700,
+        parent_tsumo: 3900,
+        parent_ron: 11600,
         aka: "30符4翻",
         ex1: "",
         ex2: "",
