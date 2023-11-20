@@ -43,7 +43,7 @@ export default function Home() {
                     </div>
 
                     <div className="col-auto">
-                        <label className="p-3">点棒</label>
+                        <label className="p-3">供託</label>
                         <input className="form-control" type="number" min="0" max="99" value={tenbou} onChange={e => setTenbou(Number(e.target.value))} />
                     </div>
 

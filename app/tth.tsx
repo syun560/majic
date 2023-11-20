@@ -53,8 +53,8 @@ export const Hyou : React.FC<Props> = ({tenbou, honba, oya, rival, tsumo, ron}: 
     else{
         hdata = points.map(p => {
             let tensa = 0
-            if (rival='子'){
-                tensa = p.child_tsumo_from_child * 3 + p.child_tsumo_from_parent + tenbou * 1000 + honba * 400   
+            if (rival==='子'){
+                tensa = p.child_tsumo_from_child * 3 + p.child_tsumo_from_parent + tenbou * 1000 + honba * 400
             }
             else{
                 tensa = p.child_tsumo_from_child * 2 + p.child_tsumo_from_parent * 2 + tenbou * 1000 + honba * 400
@@ -73,7 +73,6 @@ export const Hyou : React.FC<Props> = ({tenbou, honba, oya, rival, tsumo, ron}: 
     }
 
     // 絞り込みによって取得する情報を変化させる
-
     
 
     return (
