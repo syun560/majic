@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { Hyou } from './tth.tsx'
+import { Ala } from './alealert.tsx'
 
 export default function Home() {
     const [tenbou, setTenbou] = useState<number>(0)
@@ -25,6 +26,7 @@ export default function Home() {
 
         return (
             <>
+                <Ala />
                 <div className="row">
                     <div className="col-auto">
                         <label className="p-3">自分が </label>
@@ -57,7 +59,7 @@ export default function Home() {
                 <div className="row">
                     <div className="col-auto">
                         <input type="checkbox" className="p-3" checked={ron} onChange={() => setRon(prevState => !prevState)} />
-                        <label className="m-3">ロン</label>
+                        <label className="m-3">ロン(直撃)</label>
                     </div>
                     <div className="col-auto">
                         <input type="checkbox" className="p-3" checked={tsumo} onChange={() => setTsumo(prevState => !prevState)} />
