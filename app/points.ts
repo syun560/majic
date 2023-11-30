@@ -7,8 +7,9 @@ export const points = [
         parent_ron: 1500,
         aka: "30符1翻",
         ex1: "",
-        ex2: "",
+        ex2: "1翻",
         ex3: "",
+        ex4: "",
         rate: 0.2
     },
     {
@@ -16,11 +17,12 @@ export const points = [
         child_tsumo_from_parent: 700,
         child_ron: 1500,
         parent_tsumo: 700,
-        parent_ron: 2100,
-        aka: "20符1翻",
-        ex1: "",
+        parent_ron: 2000,
+        aka: "20符2翻",
+        ex1: "2翻（ダマ平和ツモ）",
         ex2: "",
-        ex3: "",
+        ex3: "1翻",
+        ex4: "",
         rate: 0.2
     },
     {
@@ -29,10 +31,37 @@ export const points = [
         child_ron: 1600,
         parent_tsumo: 800,
         parent_ron: 2400,
-        aka: "テンパネ？",
+        aka: "",
         ex1: "",
         ex2: "",
         ex3: "",
+        ex4: "2翻（七対子のみ）",
+        rate: 0.01
+    },
+    {
+        child_tsumo_from_child: 500,
+        child_tsumo_from_parent: 1000,
+        child_ron: 2000,
+        parent_tsumo: 1000,
+        parent_ron: 2900,
+        aka: "30符2翻",
+        ex1: "",
+        ex2: "2翻",
+        ex3: "",
+        ex4: "",
+        rate: 0.01
+    },
+    {
+        child_tsumo_from_child: 600,
+        child_tsumo_from_parent: 1200,
+        child_ron: 2400,
+        parent_tsumo: 1200,
+        parent_ron: 3400,
+        aka: "",
+        ex1: "",
+        ex2: "",
+        ex3: "",
+        ex4: "",
         rate: 0.01
     },
     {
@@ -41,34 +70,50 @@ export const points = [
         child_ron: 2700,
         parent_tsumo: 1300,
         parent_ron: 3900,
-        aka: "25符",
-        ex1: "七対子",
+        aka: "",
+        ex1: "3翻",
+        ex2: "",
+        ex3: "2翻",
+        ex4: "",
+        rate: 0.1
+    },
+    {
+        child_tsumo_from_child: 800,
+        child_tsumo_from_parent: 1600,
+        child_ron: 3200,
+        parent_tsumo: 1600,
+        parent_ron: 4800,
+        aka: "",
+        ex1: "",
         ex2: "",
         ex3: "",
+        ex4: "3翻（七対子+1）",
         rate: 0.1
     },
     {
         child_tsumo_from_child: 1000,
         child_tsumo_from_parent: 2000,
-        child_ron: 4000,
+        child_ron: 3900,
         parent_tsumo: 2000,
-        parent_ron: 4000,
+        parent_ron: 5800,
         aka: "30符3翻",
         ex1: "",
-        ex2: "",
+        ex2: "3翻",
         ex3: "",
+        ex4: "",
         rate: 0.2
     },
     {
         child_tsumo_from_child: 1300,
         child_tsumo_from_parent: 2600,
         child_ron: 5200,
-        parent_tsumo: 3000,
-        parent_ron: 2000,
+        parent_tsumo: 2600,
+        parent_ron: 7700,
         aka: "リーチ",
-        ex1: "平和ツモ",
+        ex1: "4翻(平和ツモ+1)",
         ex2: "",
-        ex3: "",
+        ex3: "2翻",
+        ex4: "",
         rate: 0.4
     },
     {
@@ -79,8 +124,9 @@ export const points = [
         parent_ron: 9600,
         aka: "",
         ex1: "",
-        ex2: "七対子",
+        ex2: "",
         ex3: "",
+        ex4: "4翻（七対子+2）",
         rate: 0.4
     },
     {
@@ -91,8 +137,9 @@ export const points = [
         parent_ron: 11600,
         aka: "30符4翻",
         ex1: "",
-        ex2: "",
+        ex2: "4翻",
         ex3: "",
+        ex4: "",
         rate: 0.4
     },
     {
@@ -102,9 +149,10 @@ export const points = [
         parent_tsumo: 4000,
         parent_ron: 12000,
         aka: "満貫",
-        ex1: "",
-        ex2: "",
-        ex3: "",
+        ex1: "5翻（倍満）",
+        ex2: "5翻（倍満）",
+        ex3: "4～5翻（倍満）",
+        ex4: "5翻（倍満）",
         rate: 0.4
     },
     {
@@ -114,9 +162,10 @@ export const points = [
         parent_tsumo: 6000,
         parent_ron: 18000,
         aka: "跳満",
-        ex1: "",
-        ex2: "",
-        ex3: "",
+        ex1: "6～7翻（倍満）",
+        ex2: "6～7翻（倍満）",
+        ex3: "6～7翻（倍満）",
+        ex4: "6～7翻（倍満）",
         rate: 0.2
     },
     {
@@ -126,9 +175,10 @@ export const points = [
         parent_tsumo: 8000,
         parent_ron: 24000,
         aka: "倍満",
-        ex1: "",
-        ex2: "",
-        ex3: "",
+        ex1: "8～10翻（倍満）",
+        ex2: "8～10翻（倍満）",
+        ex3: "8～10翻（倍満）",
+        ex4: "8～10翻（倍満）",
         rate: 0.1
     },
     {
@@ -138,9 +188,10 @@ export const points = [
         parent_tsumo: 12000,
         parent_ron: 36000,
         aka: "三倍満",
-        ex1: "",
-        ex2: "",
-        ex3: "",
+        ex1: "11～12翻（三倍満）",
+        ex2: "11～12翻（三倍満）",
+        ex3: "11～12翻（三倍満）",
+        ex4: "11～12翻（三倍満）",
         rate: 0.01
     },
     {
@@ -150,9 +201,10 @@ export const points = [
         parent_tsumo: 16000,
         parent_ron: 48000,
         aka: "数え役満",
-        ex1: "",
-        ex2: "",
-        ex3: "",
+        ex1: "13翻～（数え役満）",
+        ex2: "13翻～（数え役満）",
+        ex3: "13翻～（数え役満）",
+        ex4: "13翻～（数え役満）",
         rate: 0.02
     },
 ]

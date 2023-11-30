@@ -15,7 +15,7 @@ export default function RootLayout({
     return (
         <html lang="ja">
             <body>
-                <nav className="navbar navbar-dark bg-secondary shadow">
+                <nav className="navbar navbar-dark bg-secondary bg-gradient shadow">
                     <div className="container">
                         <a className="navbar-brand" href="#">麻雀点差計算機</a>
                         <span className="navbar-text">Ver 1.0</span>
