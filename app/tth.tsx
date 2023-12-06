@@ -67,6 +67,13 @@ export const Hyou : React.FC<Props> = ({tenbou, honba, oya, rival, tsumo, ron, r
             }
         }
     }
+    // スタイル（翻数によってhsl指定による色分けを行う。）
+    const st_agari = (agari :string) => {
+        const hon = Number(agari[0])
+        return {
+            backgroundColor: `hsl(${hon * 30}, 70%, 80%)`
+        }
+    }
 
 
     let hdata: HData[] = []
@@ -169,15 +176,15 @@ export const Hyou : React.FC<Props> = ({tenbou, honba, oya, rival, tsumo, ron, r
             <tbody>
                 {hdata.map((h, i) => {
                     return (
-                        <tr key={i}>
+                        <tr key={h.tensa + i}>
                             <td style={st_method(h.method)}>{h.method}</td>
                             <td className="text-danger">{h.tensa}</td>
                             <td>{h.aka}</td>
                             <td style={st_rate(h.rate)}>{h.rate} %</td>
-                            <td className={h.ex2 === "" ? "table-secondary" : ""}>{h.ex2}</td>
-                            <td className={h.ex1 === "" ? "table-secondary" : ""}>{h.ex1}</td>
-                            <td className={h.ex3 === "" ? "table-secondary" : ""}>{h.ex3}</td>
-                            <td className={h.ex4 === "" ? "table-secondary" : ""}>{h.ex4}</td>
+                            <td style={st_agari(h.ex2)} className={h.ex2 === "" ? "table-secondary" : ""}>{h.ex2}</td>
+                            <td style={st_agari(h.ex1)} className={h.ex1 === "" ? "table-secondary" : ""}>{h.ex1}</td>
+                            <td style={st_agari(h.ex3)} className={h.ex3 === "" ? "table-secondary" : ""}>{h.ex3}</td>
+                            <td style={st_agari(h.ex4)} className={h.ex4 === "" ? "table-secondary" : ""}>{h.ex4}</td>
                         </tr>
                     );
                 })}
